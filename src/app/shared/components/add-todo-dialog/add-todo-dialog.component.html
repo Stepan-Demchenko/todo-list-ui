@@ -1,0 +1,13 @@
+<form [formGroup]="form" class="dialog-container">
+  <div class="floating-placeholder">
+    <input formControlName="name" placeholder="Name" id="name" name="name" type="text"/>
+  </div>
+  <div class="floating-placeholder">
+    <input formControlName="date" [ngClass]="{'date-input--has-value': !!form.value.date}" placeholder="Date" id="date" name="date" type="datetime-local" />
+  </div>
+  <button [disabled]="form.invalid"
+          (click)="saveToDo()"
+          class="save-btn">
+    Save
+  </button>
+</form>

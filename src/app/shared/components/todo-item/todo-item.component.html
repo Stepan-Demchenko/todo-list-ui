@@ -1,0 +1,9 @@
+<div class="todo-item-container">
+  <div>
+    <app-check-box [ngModel]="todo().completed" (ngModelChange)="toggleComplete($event)" />
+  </div>
+  <div class="todo-content">
+    <p class="name">{{todo().name}}</p>
+    <p class="date">{{todo().date | date: 'medium'}}</p>
+  </div>
+</div>

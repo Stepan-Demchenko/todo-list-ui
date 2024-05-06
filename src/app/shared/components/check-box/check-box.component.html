@@ -1,0 +1,9 @@
+<div class="container" (click)="checkBox.click()">
+  <div class="round">
+    <input type="checkbox"
+           #checkBox
+           [ngModel]="checked"
+           (ngModelChange)="onModelChange($event)" />
+    <label></label>
+  </div>
+</div>

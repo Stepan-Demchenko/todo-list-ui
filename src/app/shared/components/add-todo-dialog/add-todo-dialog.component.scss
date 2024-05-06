@@ -1,0 +1,82 @@
+.dialog-container {
+  background: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, .floating-placeholder {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20pt;
+  line-height: 2.6em;
+  height: 2.6em;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+input[type="datetime-local"]::-webkit-datetime-edit-text,
+input[type="datetime-local"]::-webkit-datetime-edit-month-field,
+input[type="datetime-local"]::-webkit-datetime-edit-day-field,
+input[type="datetime-local"]::-webkit-datetime-edit-year-field,
+input[type="datetime-local"]::-webkit-datetime-edit-hour-field,
+input[type="datetime-local"]::-webkit-datetime-edit-minute-field {
+  color: var(--secondary--1-color);
+  font-weight: 300;
+}
+
+input[type="date"].date-input--has-value::-webkit-datetime-edit-text,
+input[type="date"].date-input--has-value::-webkit-datetime-edit-month-field,
+input[type="date"].date-input--has-value::-webkit-datetime-edit-day-field,
+input[type="date"].date-input--has-value::-webkit-datetime-edit-year-field {
+  color: black;
+}
+
+
+.floating-placeholder input:focus {
+  &::placeholder {
+    color: var(--primary-color);
+  }
+}
+
+.floating-placeholder {
+  position: relative;
+}
+
+.floating-placeholder input {
+  font-size: 20pt;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: transparent;
+  z-index: 2;
+  border-bottom: 1px solid #ccc;
+  padding-left: 10px;
+}
+
+.floating-placeholder:last-child input {
+  border-bottom: none;
+}
+
+.floating-placeholder-float input {
+  line-height: 3.4em;
+}
+
+.save-btn {
+  background: transparent;
+  cursor: pointer;
+  border: unset;
+  color: var(--primary-color);
+  font-size: 18px;
+  border-radius: 12px;
+  padding: 10px;
+
+  &:disabled {
+    color: var(--secondary-color);
+    cursor: not-allowed;
+  }
+}
